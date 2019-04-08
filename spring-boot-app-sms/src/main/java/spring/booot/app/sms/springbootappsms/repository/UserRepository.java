@@ -45,9 +45,11 @@ public void update(@Param("firstname") String firstname, @Param("lastname") Stri
 
 	// delete user based on the userID
 	//delete from USER_INFO where user_id=1001;
-/*	@Query("delete from User uf where uf.userId= ? ")
-	public List<User> deleteUserById(long id);
-*/	
+	@Modifying
+	@Transactional
+	@Query("delete from User uf where uf.userId=:id ")
+	public void deleteUserById(@Param(value="id") long id);
+	
 	
 	/*
 	@Repository

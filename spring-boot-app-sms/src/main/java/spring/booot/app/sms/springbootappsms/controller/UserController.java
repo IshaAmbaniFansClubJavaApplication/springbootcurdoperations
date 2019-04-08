@@ -47,11 +47,11 @@ public class UserController {
 */		return userDetail;
 	}
 	
-	@RequestMapping(value="/getuserupdate" ,method = RequestMethod.PUT)
-	public void getUserUpdate(/*@PathVariable long id,@RequestBody User userData,@PathVariable String firstname*/){
+	@RequestMapping(value="/getuserupdate/{id}/{firstname}" ,method = RequestMethod.PUT)
+	public void getUserUpdate(@PathVariable long id,@PathVariable String firstname){
 		System.out.println("hi bean of the application ");
-		long id =1001;
-		String firstname = "Adhi";
+		//long id =1001;
+		//String firstname = "Adhi";
 		/*List<User> updateUserData =*/ userRepository.updateUserData(firstname,id);
 		//userRepository.findOne(userData)
 		//System.out.println("user Updated");
@@ -61,13 +61,14 @@ public class UserController {
 	}
 	
 	// delete of the user based on the userId
-	/*@RequestMapping(value="/userdelete" ,method = RequestMethod.DELETE)
+	@RequestMapping(value="/userdelete" ,method = RequestMethod.DELETE)
 	public void deleteUser() {
 		long id=1001;
-		List<User> deleteUSer = userRepository.deleteUserById(id);
+	/*	List<User> deleteUSer =*/ userRepository.deleteUserById(id);
+		System.out.println("delete the record based on the user id");
 		
 	}
-	*/
+	
 	
 	// here we can't having the any dynamic values
 	@RequestMapping(value="/value")
