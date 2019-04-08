@@ -61,9 +61,10 @@ public class UserController {
 	}
 	
 	// delete of the user based on the userId
-	@RequestMapping(value="/userdelete" ,method = RequestMethod.DELETE)
-	public void deleteUser() {
-		long id=1001;
+	/*@RequestMapping(value="/userdelete" ,method = RequestMethod.DELETE)*/
+	@RequestMapping(value="/userdelete/{id}" ,method = RequestMethod.DELETE)
+	public void deleteUser(@PathVariable(name="id") long id) {
+	//	long id=1001;
 	/*	List<User> deleteUSer =*/ userRepository.deleteUserById(id);
 		System.out.println("delete the record based on the user id");
 		
