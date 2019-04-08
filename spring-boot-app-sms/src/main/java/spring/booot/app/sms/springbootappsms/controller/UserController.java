@@ -47,18 +47,18 @@ public class UserController {
 */		return userDetail;
 	}
 	
-	/*@RequestMapping(value="/getuserupdate" ,method = RequestMethod.PUT)
-	public List<User> getUserUpdate(@PathVariable long id,@RequestBody User userData,@PathVariable String firstname){
+	@RequestMapping(value="/getuserupdate" ,method = RequestMethod.PUT)
+	public void getUserUpdate(/*@PathVariable long id,@RequestBody User userData,@PathVariable String firstname*/){
 		System.out.println("hi bean of the application ");
 		long id =1001;
-		String firstname = "Manoj";
-*/	//	List<User> updateUserData = userRepository.updateUserData(firstname,id);
+		String firstname = "Adhi";
+		/*List<User> updateUserData =*/ userRepository.updateUserData(firstname,id);
 		//userRepository.findOne(userData)
 		//System.out.println("user Updated");
-		//System.out.println(updateUserData);
+		System.out.println("updated record");
 		
-		//return updateUserData;
-	//}
+	//	return updateUserData;
+	}
 	
 	// delete of the user based on the userId
 	/*@RequestMapping(value="/userdelete" ,method = RequestMethod.DELETE)
